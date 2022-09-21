@@ -18,15 +18,30 @@ class _HeaderState extends State<Header> {
           Column(
             children: [
               Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
                 height: size.height / 5,
                 decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(45),
-                    ),
-                    boxShadow: [
-                      BoxShadow(blurRadius: 2),
-                    ]),
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.vertical(
+                    bottom: Radius.circular(45),
+                  ),
+                  boxShadow: [
+                    BoxShadow(blurRadius: 2),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.white70,
+                          radius: 35,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
