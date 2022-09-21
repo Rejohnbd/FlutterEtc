@@ -29,6 +29,7 @@ class _HambergerState extends State<Hamberger> {
     return Scaffold(
       body: CustomScrollView(slivers: [
         SliverAppBar(
+          pinned: true,
           title: Text('Deviver Me'),
           leading: IconButton(
             icon: Icon(Icons.menu),
