@@ -11,6 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
+        bottomAppBarColor: Colors.teal,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.orange,
+        ),
       ),
       home: Hamberger(),
       debugShowCheckedModeBanner: false,
@@ -52,6 +56,37 @@ class _HambergerState extends State<Hamberger> {
             ),
           ),
         ],
+      ),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.home),
+      ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(45)),
+        child: Container(
+          color: Colors.black38,
+          child: BottomAppBar(
+            shape: CircularNotchedRectangle(),
+            child: Row(
+              children: [
+                Spacer(),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.add_alert),
+                    color: Colors.white),
+                Spacer(),
+                Spacer(),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.turned_in),
+                    color: Colors.white),
+                Spacer(),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
