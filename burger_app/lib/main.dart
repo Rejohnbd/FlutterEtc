@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'header.dart';
+import 'categories.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,6 +50,7 @@ class _HambergerState extends State<Hamberger> {
             ],
           ),
           Header(),
+          Categories(),
           SliverList(
             delegate: SliverChildListDelegate(
               [
