@@ -12,6 +12,16 @@ class _HambergersListState extends State<HambergersList> {
   Widget build(BuildContext context) {
     int items = 10;
 
+    Widget baconImage = Container(
+      height: 110,
+      child: Image.asset("assets/images/burger1.jpg"),
+    );
+
+    Widget chickenImage = Container(
+      height: 110,
+      child: Image.asset("assets/images/burger2.jpg"),
+    );
+
     return SliverToBoxAdapter(
       child: Container(
         height: 240.0,
@@ -20,6 +30,7 @@ class _HambergersListState extends State<HambergersList> {
           scrollDirection: Axis.horizontal,
           itemCount: items,
           itemBuilder: (context, index) {
+            bool reverse = index.isEven;
             return Stack(
               children: [
                 Container(
@@ -86,7 +97,17 @@ class _HambergersListState extends State<HambergersList> {
                       ),
                     ),
                   ),
-                )
+                ),
+                Positioned(
+                  top: reverse ? 70 : 70,
+                  left: 10,
+                  child: GestureDetector(
+                    onTap: () {
+                      // Todo Navigator
+                    },
+                    child: reverse ? chickenImage : baconImage,
+                  ),
+                ),
               ],
             );
           },
