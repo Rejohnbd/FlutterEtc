@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'header.dart';
 import 'categories.dart';
+import 'hambergers_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        primaryColor: Colors.teal,
         appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
         bottomAppBarColor: Colors.teal,
         floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -51,13 +53,7 @@ class _HambergerState extends State<Hamberger> {
           ),
           Header(),
           Categories(),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Text("Hamberger", style: TextStyle(fontSize: 300)),
-              ],
-            ),
-          ),
+          HambergersList(),
         ],
       ),
       extendBody: true,
